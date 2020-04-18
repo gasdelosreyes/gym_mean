@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const connectDB = async() => {
-    let connect = await mongoose.connect(process.env.MONGOURI, {
+    let connect = await mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
         useFindAndModify: false,
         useCreateIndex: true,
@@ -10,4 +10,4 @@ const connectDB = async() => {
     console.log('MongoDB conectado:'.green.underline.bolds + ` ${connect.connection.host}`.yellow);
 }
 
-module.exports = connectDB
+module.exports = connectDB;
