@@ -1,7 +1,6 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
 
-var SocioSchema = new Schema({
+var SocioSchema = new mongoose.Schema({
     usuario: {
         type: Schema.Types.ObjectId,
         ref: 'Usuario',

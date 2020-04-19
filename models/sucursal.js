@@ -1,14 +1,20 @@
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+const mongoose = require('mongoose')
 
-var SucursalSchema = new Schema({
+var SucursalSchema = new mongoose.Schema({
     gimnasio: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'Gimnasio',
-        required: [true, 'La sucursal debe pertenecer a un gimnasio.']
+        required: [true, 'Necesita agregar un gimnasio.']
     },
-    direccion: String,
-    telefono: Number
+    direccion: {
+        type: String,
+        required: [true, 'Necesita agregar una dirección.']
+    },
+    telefono: {
+        type: Number,
+        required: [true, 'Necesita agregar un telefono.'],
+        maxlength: [12, 'El numero de telefono no es válido']
+    }
 })
 
 module.exports = mongoose.model('Sucursal', SucursalSchema)
