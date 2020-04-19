@@ -1,11 +1,6 @@
 const mongoose = require('mongoose')
 
 var T_UsuarioSchema = new mongoose.Schema({
-    usuario: {
-        type: mongoose.Types.ObjectId,
-        ref: 'Usuario',
-        required: [true, 'Necesita agregar un usuario.']
-    },
     descripcion: {
         type: String,
         required: [true, 'Necesita agregar una descripción.'],
@@ -14,7 +9,7 @@ var T_UsuarioSchema = new mongoose.Schema({
     rol: {
         type: String,
         required: [true, 'Necesita agregar un rol.'],
-        enum: ['Admin', 'Otro']
+        enum: ['Admin', 'Entrenador', 'Secretaria', 'Otro']
     }
 })
 

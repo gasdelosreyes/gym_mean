@@ -6,6 +6,11 @@ var UsuarioSchema = new mongoose.Schema({
         ref: 'Persona',
         required: [true, 'Necesita agregar una persona.']
     },
+    t_usuario: {
+        type: mongoose.Types.ObjectId,
+        ref: 'T_Usuario',
+        required: [true, 'Necesita agregar un tipo de usuario.']
+    },
     nombre_usuario: {
         type: String,
         required: [true, 'Necesita agregar un nombre de usuario.'],
@@ -18,7 +23,6 @@ var UsuarioSchema = new mongoose.Schema({
     },
     fecha_ingreso: {
         type: Date,
-        required: [true, 'Necesita una fecha de ingreso.'],
         default: Date.now
     },
     estado: {

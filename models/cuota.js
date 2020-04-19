@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 var CuotaSchema = new mongoose.Schema({
     socio: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: 'Socio',
         required: [true, 'La cuota debe ser de un socio.']
     },
@@ -13,7 +13,8 @@ var CuotaSchema = new mongoose.Schema({
     entrenamiento: {
         type: String,
         required: [true, 'Necesita agregar un entrenamiento.'],
-        maxlength: [30, 'El entrenamiento no puede ser tan largo.']
+        maxlength: [30, 'El entrenamiento no puede ser tan largo.'],
+        enum: ['Crossfit', 'Kinesio', 'Otro']
     },
     monto: {
         type: Number,
