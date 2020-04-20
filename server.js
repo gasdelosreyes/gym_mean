@@ -13,24 +13,24 @@ connectDB();
 // Conectando express
 const app = express();
 
-//Middlewares
+// Middlewares
 const errorHandler = require('./middleware/error');
 
-//Body parser
+// Body parser
 app.use(express.json());
 
-//Logging http requests
+// Logging http requests
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-//Archivos de rutas
+// Archivos de rutas
 const personas = require('./routes/personas');
 
-//Montar rutas
+// Montar rutas
 app.use('/gym/personas', personas);
 
-//Error Middleware
+// Error Middleware
 app.use(errorHandler);
 
 // Obteniendo variables de entorno
