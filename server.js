@@ -13,19 +13,25 @@ connectDB();
 // Conectando express
 const app = express();
 
-//Middlewares
+// Middlewares
 const errorHandler = require('./middleware/error');
 
-//Body parser
+// Body parser
 app.use(express.json());
 
-//Logging http requests
+// Logging http requests
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-//Archivos de rutas
+// Archivos de rutas
 const personas = require('./routes/personas');
+
+// Montar rutas
+app.use('/gym/personas', personas);
+
+// Error Middleware
+app.use(errorHandler);
 
 // Obteniendo variables de entorno
 const PORT = process.env.PORT || 3000
@@ -33,7 +39,7 @@ const PORT = process.env.PORT || 3000
 // Conectando al servidor
 const server = app.listen(
     PORT,
-    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto`.green.underline.bold + `: ${PORT}`.yellow)
+    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto`.cyan.underline.bold + `: ${PORT}`.yellow)
 );
 
 //Manejando promesas
