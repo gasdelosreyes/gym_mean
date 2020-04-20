@@ -39,7 +39,7 @@ var PersonaSchema = new mongoose.Schema({
     telefono: {
         type: Number,
         required: [true, 'Necesita agregar un número de telefono'],
-        maxlength: [13, 'El número de telefono no debe ser tan largo']
+        maxlength: [14, 'El número de telefono no debe ser tan largo']
     },
     domicilio: {
         type: String,

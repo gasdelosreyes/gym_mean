@@ -27,6 +27,12 @@ if (process.env.NODE_ENV === 'development') {
 //Archivos de rutas
 const personas = require('./routes/personas');
 
+//Montar rutas
+app.use('/gym/personas', personas);
+
+//Error Middleware
+app.use(errorHandler);
+
 // Obteniendo variables de entorno
 const PORT = process.env.PORT || 3000
 
