@@ -9,11 +9,11 @@ const controller = {
     //@route GET /api/gimnasio
     //@access privado (Administrador global).
     getGimnasios: asyncHandler(async(req, res, next) => {
-        let gimnasio = await Gimnasio.find()
+        let gimnasios = await Gimnasio.find()
         res.status(200).json({
             success: true,
-            count: gimnasio.length,
-            data: gimnasio
+            count: gimnasios.length,
+            data: gimnasios
         })
     }),
     //@author Montero Facundo

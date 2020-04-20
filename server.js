@@ -26,9 +26,13 @@ if (process.env.NODE_ENV === 'development') {
 
 // Archivos de rutas
 const personas = require('./routes/personas');
+const usuario = require('./routes/usuario')
+const gimnasio = require('./routes/gimnasio')
 
 // Montar rutas
 app.use('/gym/personas', personas);
+app.use('/gym/gimnasio', gimnasio)
+app.use('/gym/usuario', usuario)
 
 // Error Middleware
 app.use(errorHandler);
