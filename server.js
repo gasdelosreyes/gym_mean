@@ -39,7 +39,7 @@ const PORT = process.env.PORT || 3000
 // Conectando al servidor
 const server = app.listen(
     PORT,
-    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto`.green.underline.bold + `: ${PORT}`.yellow)
+    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto`.cyan.underline.bold + `: ${PORT}`.yellow)
 );
 
 //Manejando promesas
