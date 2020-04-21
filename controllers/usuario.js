@@ -8,7 +8,7 @@ var controller = {
     //@description Obtener todas los usuarios (Sin select,sort,paginacion)
     //@route GET /api/usuario
     //@access privado (Administrador global).
-    getUsuarios: asyncHandler(async(res, req, next) => {
+    getUsuarios: asyncHandler(async(req, res, next) => {
         let usuarios = await Usuario.find()
         res.status(200).json({
             success: true,
