@@ -5,6 +5,9 @@ var GimnasioSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Necesita agregar un nombre.'],
         maxlength: [30, 'El nombre no puede ser tan largo.']
+    },
+    logo: {
+        type: String
     }
 })
 
