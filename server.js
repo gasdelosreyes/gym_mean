@@ -13,24 +13,30 @@ connectDB();
 // Conectando a la libreria express
 const app = express();
 
-//Middlewares
+// Middlewares
 const errorHandler = require('./middleware/error');
 
-//Body parser
+// Body parser
 app.use(express.json());
 
-//Logging http requests
+// Logging http requests
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-//Archivos de rutas
+// Archivos de rutas
 const personas = require('./routes/personas');
+const usuario = require('./routes/usuario')
+const gimnasio = require('./routes/gimnasio')
+const t_usuario = require('./routes/t_usuario')
 
-//Montar rutas
+// Montar rutas
 app.use('/gym/personas', personas);
+app.use('/gym/gimnasio', gimnasio)
+app.use('/gym/usuario', usuario)
+app.use('/gym/t_usuario', t_usuario)
 
-//Error Middleware
+// Error Middleware
 app.use(errorHandler);
 
 // Obteniendo variables de entorno
@@ -39,7 +45,7 @@ const PORT = process.env.PORT || 3000
 // Conectando al servidor
 const server = app.listen(
     PORT,
-    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto`.cyan.underline.bold + `: ${PORT}`.yellow)
+    console.log(`Servidor corriendo en modo ${process.env.NODE_ENV} escuchando en el puerto:`.cyan.underline.bold + ` ${PORT}`.yellow)
 );
 
 //Manejando promesas
