@@ -43,7 +43,7 @@ var controller = {
     }),
     //@author Montero Facundo
     //@description Actualizar un usuario por id
-    //@route UPDATE /api/gimnasio/:id
+    //@route UPDATE /api/usuario/:id
     //@access privado (Administrador global).
     updateUsuario: asyncHandler(async(req, res, next) => {
         let usuario = await Usuario.findByIdAndUpdate(req.params.id, req.body, {
