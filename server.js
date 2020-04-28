@@ -10,7 +10,7 @@ dotenv.config({ path: './config/config.env' })
 // Conectando a la base de datos
 connectDB();
 
-// Conectando express
+// Conectando a la libreria express
 const app = express();
 
 // Middlewares
