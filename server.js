@@ -28,19 +28,11 @@ if (process.env.NODE_ENV === 'development') {
 const personas = require('./routes/personas');
 const usuario = require('./routes/usuario')
 const gimnasio = require('./routes/gimnasio')
-const t_usuario = require('./routes/t_usuario')
-const socio = require('./routes/socio')
-const sucursal = require('./routes/sucursal')
-const cuota = require('./routes/cuota')
 
 // Montar rutas
 app.use('/gym/personas', personas)
 app.use('/gym/gimnasio', gimnasio)
 app.use('/gym/usuario', usuario)
-app.use('/gym/t_usuario', t_usuario)
-app.use('/gym/socio', socio)
-app.use('/gym/sucursal', sucursal)
-app.use('/gym/cuota', cuota)
 
 // Error Middleware
 app.use(errorHandler);
