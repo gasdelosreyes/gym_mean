@@ -8,6 +8,10 @@ var GimnasioSchema = new mongoose.Schema({
     },
     logo: {
         type: String
+    },
+    users: {
+        type: [mongoose.Types.ObjectId],
+        ref: 'Usuario'
     }
 })
 

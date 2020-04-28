@@ -3,7 +3,7 @@ const asyncHandler = require('../middleware/async');
 const fs = require('fs')
 const path = require('path')
 
-const Gimnasio = require('../models/gimnasio');
+const Gimnasio = require('../models/Gimnasio');
 
 const controller = {
     //@author Montero Facundo
@@ -77,7 +77,7 @@ const controller = {
     //@author Montero Facundo
     //@description Subir un logo del gimnasio por id
     //@route UPDATE /api/gimnasio/:id
-    //@access privado (Administrador global).
+    //@access privado (Administrador global, Dueño).
     upload: asyncHandler(async(req, res, next) => {
         var file_name = 'Imagen no subida.'
         if (!req.files) {

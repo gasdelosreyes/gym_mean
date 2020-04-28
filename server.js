@@ -10,7 +10,7 @@ dotenv.config({ path: './config/config.env' })
 // Conectando a la base de datos
 connectDB();
 
-// Conectando express
+// Conectando a la libreria express
 const app = express();
 
 // Middlewares
@@ -26,15 +26,13 @@ if (process.env.NODE_ENV === 'development') {
 
 // Archivos de rutas
 const personas = require('./routes/personas');
-const usuario = require('./routes/usuario')
-const gimnasio = require('./routes/gimnasio')
-const t_usuario = require('./routes/t_usuario')
+const usuario = require('./routes/usuario');
+const gimnasio = require('./routes/gimnasio');
 
 // Montar rutas
 app.use('/gym/personas', personas);
-app.use('/gym/gimnasio', gimnasio)
-app.use('/gym/usuario', usuario)
-app.use('/gym/t_usuario', t_usuario)
+app.use('/gym/gimnasio', gimnasio);
+app.use('/gym/usuario', usuario);
 
 // Error Middleware
 app.use(errorHandler);

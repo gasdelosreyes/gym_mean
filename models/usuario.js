@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 var UsuarioSchema = new mongoose.Schema({
     persona: {
@@ -6,10 +8,10 @@ var UsuarioSchema = new mongoose.Schema({
         ref: 'Persona',
         required: [true, 'Necesita agregar una persona.']
     },
-    t_usuario: {
-        type: mongoose.Types.ObjectId,
-        ref: 'T_Usuario',
-        required: [true, 'Necesita agregar un tipo de usuario.']
+    rol: {
+        type: String,
+        enum: ['administrador', 'dueño', 'secretario', 'entrenador', 'usuario'],
+        default: 'usuario'
     },
     nombre_usuario: {
         type: String,
@@ -30,5 +32,23 @@ var UsuarioSchema = new mongoose.Schema({
         default: false
     }
 })
+
+//Encripta la contraseña usando bcrypt
+UsuarioSchema.pre('save', async function(next) {
+    const salt = await bcrypt.genSalt(10);
+    this.contraseña = await bcrypt.hash(this.contraseña, salt);
+});
+
+//Retorna el JWT al registrar o loguearse
+UsuarioSchema.methods.getSignedJwtToken = function() {
+    return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+        expiresIn: process.env.JWT_EXPIRE
+    });
+}
+
+//Matchea la contraseña entrante con la contraseña de la base de datos
+UsuarioSchema.methods.matchPassword = async function(enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.contraseña);
+}
 
 module.exports = mongoose.model('Usuario', UsuarioSchema)
