@@ -1,0 +1,101 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/08/01/53/gymer-1126999_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    display: flex;
+    width: 650px;
+    height: 350px;
+    background: #ffffff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1.3%;
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.register-title {
+    height: 60px;
+    padding: 10px;
+    line-height: 35px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 1px rgba(white, 0.75);
+    background: #3d68f5;
+}
+
+.register {
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.table .col1 {
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    width: 50px;
+    height: 30px;
+    background: #dfdfdf;
+    color: #ffffff;
+}
+
+.table .col2 {
+    margin-left: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    width: 50px;
+    height: 30px;
+    background: #dfdfdf;
+    color: #ffffff;
+}
+
+.input-field {
+    margin-top: 15px;
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+    background: #dfdfdf;
+    color: #ffffff;
+}
+
+.input-field:active,
+.input-field:focus {
+    outline: none;
+}
+
+label {
+    display: top;
+    width: 20%;
+    text-align: right;
+    margin: 10px;
+}
+
+.campos {
+    text-align: left;
+    width: 7%;
+}
