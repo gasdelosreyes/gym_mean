@@ -1,0 +1,154 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Calibri;
+}
+
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/08/01/53/gymer-1126999_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-container {
+    display: flex;
+    width: 850px;
+    height: 450px;
+    background: #000000;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 1.3%;
+    border: 0.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.login,
+.imagen {
+    flex: 1;
+}
+
+.imagen {
+    position: relative;
+    background-image: linear-gradient(to top right, #67e9fa, #37465f);
+    border-radius: 1.5%;
+}
+
+.gym {
+    width: 250px;
+    height: 250px;
+    background: #000000;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    left: calc(50% - 130px);
+    border: 3px solid hsl(0, 0%, 100%, 0.8);
+}
+
+.avatar {
+    width: 225px;
+    height: 225px;
+    margin-top: 12px;
+    padding: 5px;
+    display: absolute;
+}
+
+.imagen h1 {
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 30px;
+    text-align: center;
+    font-weight: 300px;
+}
+
+.login h1 {
+    color: #ffffff;
+    margin-top: 10px;
+    padding: 30px;
+    text-align: center;
+    font-weight: 300px;
+}
+
+.login .submit {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    background: #37465f;
+    color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(#ffffff, 0.2);
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.submit:hover {
+    background-color: #6382e9;
+}
+
+.input-container {
+    display: flex;
+    padding: 5px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+.input-container i {
+    position: relative;
+}
+
+.icon {
+    padding: 16px;
+    background: #37465f;
+    min-width: 50px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    background: transparent;
+    color: #ffffff;
+    border: 0.5px solid #37465f;
+}
+
+.input-field:active,
+.input-field:focus {
+    outline: none;
+}
+
+.links {
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left;
+}
+
+.login a {
+    text-decoration: none;
+    text-decoration: underline;
+    font-size: 16px;
+    line-height: 20px;
+    color: #5e5e5e;
+}
+
+.login a:hover {
+    color: #37465f;
+}
+
+hr {
+    margin-left: 45px;
+    width: 80%;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #32828d, #37465f);
+    height: 3px;
+}

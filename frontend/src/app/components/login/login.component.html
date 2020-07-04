@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="login.component.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="imagen">
+                <h1>BIENVENIDO</h1>
+                <div class="gym">
+                    <img class="avatar" src="../../../assets/icons/logo_login.png" alt="gym" />
+                </div>
+            </div>
+            <div class="login">
+                <div>
+                    <h1>INICIAR SESIÓN</h1>
+                    <hr />
+                </div>
+                <form action="">
+                    <div class="input-container">
+                        <i class="fa fa-user icon"></i>
+                        <input type="text" placeholder="Nombre de usuario" class="input-field" />
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-key icon"></i>
+                        <input type="password" placeholder="Contraseña" class="input-field" />
+                    </div>
+                    <input type="submit" class="submit" value="INGRESAR" />
+                </form>
+                <div class="links">
+                    <a href="#">Olvidaste tu contraseña?</a><br />
+                    <a routerLink="../register">No tenés una cuenta?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
