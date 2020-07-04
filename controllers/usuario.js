@@ -21,7 +21,7 @@ var controller = {
     //@route GET /api/usuario/:id
     //@access privado (Administrador global,Gimnasio asociado).
     getUsuario: asyncHandler(async(req, res, next) => {
-        let usuario = await Usuario.findById(req.usuario.id)
+        let usuario = await Usuario.findById(req.usuario.id);
         if (!usuario) {
             return next(new ErrorResponse(`No se encontró el usuario con id ${req.usuario.id}`, 404))
         }
