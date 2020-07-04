@@ -25,20 +25,18 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Archivos de rutas
-const personas = require('./routes/personas')
-const usuarios = require('./routes/usuario')
-const gimnasios = require('./routes/gimnasio')
-const socios = require('./routes/socio')
-const sucursales = require('./routes/sucursal')
-const cuotas = require('./routes/cuota')
+//const personas = require('./routes/personas')
+const usuarios = require('./routes/usuario');
+const gimnasios = require('./routes/gimnasio');
+//const sucursales = require('./routes/sucursal')
+//const cuotas = require('./routes/cuota')
 
 // Montar rutas
-app.use('/gym/personas', personas)
+//app.use('/gym/personas', personas)
 app.use('/gym/gimnasios', gimnasios)
 app.use('/gym/usuarios', usuarios)
-app.use('/gym/socios', socios)
-app.use('/gym/sucursales', sucursales)
-app.use('/gym/cuotas', cuotas)
+//app.use('/gym/sucursales', sucursales)
+//app.use('/gym/cuotas', cuotas)
 
 // Error Middleware
 app.use(errorHandler);

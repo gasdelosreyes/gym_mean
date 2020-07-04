@@ -14,7 +14,7 @@ var CuotaSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Necesita agregar un entrenamiento.'],
         maxlength: [30, 'El entrenamiento no puede ser tan largo.'],
-        enum: ['Crossfit', 'Kinesio', 'Otro']
+        enum: ['Crossfit', 'Kinesiologia', 'Otro']
     },
     monto: {
         type: Number,

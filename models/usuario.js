@@ -27,6 +27,10 @@ var UsuarioSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    sucursal: {
+        type: [mongoose.Types.ObjectId],
+        ref: 'Sucursal'
+    },
     estado: {
         type: Boolean,
         default: false
